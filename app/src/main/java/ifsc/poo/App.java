@@ -8,7 +8,8 @@ public class App {
 
     public static void main(String[] args){
         //teste_lampada();
-        teste_pessoa();
+        //teste_pessoa();
+        teste_retangulo();
     }
 
     public static void teste_lampada(){
@@ -37,5 +38,22 @@ public class App {
 
     p2.setNome(" ");
 
+    }
+
+    public static void teste_retangulo(){
+        Retangulo novo = new Retangulo(5,4);
+        System.out.println("Area: " + novo.getArea());
+        System.out.println("Perimetro: " + novo.getPerimetro());
+
+        for (int i =0; i < 10; i++){
+            float altura = (float) Math.random() * 10 + 1;
+            float largura = (float) Math.random() * 10 + 1;
+            Retangulo retangulo = new Retangulo(altura, largura);
+            System.out.println("Retangulo: " + (i+1) + " - Largura: " + largura + " - Altura: " + altura + " | Área: " + retangulo.getArea() + ", Perimetro: " + retangulo.getPerimetro());
+        }
+
+
+        Retangulo melhor = Retangulo.getMelhorRetangulo();
+        System.out.println(" Este é o melhor retangulo:  - Largura: " + melhor.largura + " - Altura: " + melhor.altura + " | Razão: " + melhor.getRazao());
     }
 }
