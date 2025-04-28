@@ -4,11 +4,20 @@
 package ifsc.poo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+
+
+    public static void main(String[] args){
+        teste_lampada();
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void teste_lampada(){
+        Lampada lampada_1 = new Lampada();
+        Lampada lampada_2 = new Lampada(true);
+
+        lampada_1.ligar();
+        lampada_2.desligar();
+
+        System.out.println(lampada_1.verEstado());
+        System.out.println(lampada_2.verEstado());
     }
 }
