@@ -42,8 +42,8 @@ public class App {
 
     public static void teste_retangulo(){
         Retangulo novo = new Retangulo(5,4);
-        System.out.println("Area: " + novo.getArea());
-        System.out.println("Perimetro: " + novo.getPerimetro());
+        System.out.println("Area: " + novo.getArea() + "\n");
+        System.out.println("Perimetro: " + novo.getPerimetro() + "\n");
 
         for (int i =0; i < 10; i++){
             float altura = (float) Math.random() * 10 + 1;
