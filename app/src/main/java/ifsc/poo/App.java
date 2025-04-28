@@ -54,6 +54,6 @@ public class App {
 
 
         Retangulo melhor = Retangulo.getMelhorRetangulo();
-        System.out.println(" Este é o melhor retangulo:  - Largura: " + melhor.largura + " - Altura: " + melhor.altura + " | Razão: " + melhor.getRazao());
+        System.out.println("Este é o melhor retangulo:  - Largura: " + melhor.getLargura() + " - Altura: " + melhor.getAltura() + " | Razão: " + melhor.getRazao());
     }
 }

@@ -52,4 +52,13 @@ public class Retangulo {
     public static Retangulo getMelhorRetangulo() {
         return melhorRetangulo;
     }
+
+    public float getLargura() {
+        return largura;
+    }
+
+    public float getAltura() {
+        return altura;
+    }
+
 }
