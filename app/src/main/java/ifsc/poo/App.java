@@ -7,7 +7,8 @@ public class App {
 
 
     public static void main(String[] args){
-        teste_lampada();
+        //teste_lampada();
+        teste_pessoa();
     }
 
     public static void teste_lampada(){
@@ -19,5 +20,22 @@ public class App {
 
         System.out.println(lampada_1.verEstado());
         System.out.println(lampada_2.verEstado());
+    }
+
+    public static void teste_pessoa(){
+    Pessoa p1 = new Pessoa("Alice", 22);
+    Pessoa p2 = new Pessoa("Bruno", 25);
+
+    p2.felizAniversario();
+    p2.felizAniversario();
+    p2.felizAniversario();
+
+    System.out.println("Pessoa 1: Nome " + p1.getNome()+ ", idade: " + p1.getIdade() );
+    System.out.println("Pessoa 2: Nome " + p2.getNome()+ ", idade: " + p2.getIdade() );
+
+    p1.setIdade(-44);
+
+    p2.setNome(" ");
+
     }
 }
