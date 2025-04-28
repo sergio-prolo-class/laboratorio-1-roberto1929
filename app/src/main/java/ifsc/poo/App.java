@@ -9,7 +9,8 @@ public class App {
     public static void main(String[] args){
         //teste_lampada();
         //teste_pessoa();
-        teste_retangulo();
+        //teste_retangulo();
+        teste_produto();
     }
 
     public static void teste_lampada(){
@@ -55,5 +56,22 @@ public class App {
 
         Retangulo melhor = Retangulo.getMelhorRetangulo();
         System.out.println("Este é o melhor retangulo:  - Largura: " + melhor.getLargura() + " - Altura: " + melhor.getAltura() + " | Razão: " + melhor.getRazao());
+    }
+
+    public static void teste_produto(){
+        Produto geladeira = new Produto("Geladeira", 832);
+        Produto microondas = new Produto("Microondas", 499);
+
+        System.out.println("Código geladeira: " + geladeira.getCodigo());
+        System.out.println("Código microondas: " + microondas.getCodigo());
+
+        geladeira.setDesconto(6.0);
+        microondas.setDesconto(12.0);
+
+        System.out.printf("Preço geladeira com desconto: R$ %.2f\n",geladeira.precoFinal());
+        System.out.printf("Preço micro-ondas com desconto: R$ %.2f\n",microondas.precoFinal());
+
+        System.out.println(geladeira.anuncio());
+        System.out.println(microondas.anuncio());
     }
 }
