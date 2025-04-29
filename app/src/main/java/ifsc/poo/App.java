@@ -7,10 +7,11 @@ public class App {
 
 
     public static void main(String[] args){
-        //teste_lampada();
+        teste_lampada();
         //teste_pessoa();
         //teste_retangulo();
-        teste_produto();
+        //teste_produto();
+        //teste_navio();
     }
 
     public static void teste_lampada(){
@@ -73,5 +74,23 @@ public class App {
 
         System.out.println(geladeira.anuncio());
         System.out.println(microondas.anuncio());
+    }
+
+    public static void teste_navio(){
+        Navio navio = new Navio(4, 2, 3, 'H', 'N');
+        System.out.println(navio.mostrarEstado());
+
+        navio.receberAtaque(2,3);
+        navio.receberAtaque(2,5);
+        navio.receberAtaque(2,4);
+        navio.receberAtaque(2,6);
+
+        System.out.println(navio.mostrarEstado());
+
+        if(navio.estaAfundado()){
+            System.out.println("O navio esta afundado");
+        } else {
+            System.out.println("O navio ainda esta flutuando");
+        }
     }
 }
