@@ -4,11 +4,93 @@
 package ifsc.poo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+
+
+    public static void main(String[] args){
+        teste_lampada();
+        //teste_pessoa();
+        //teste_retangulo();
+        //teste_produto();
+        //teste_navio();
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void teste_lampada(){
+        Lampada lampada_1 = new Lampada();
+        Lampada lampada_2 = new Lampada(true);
+
+        lampada_1.ligar();
+        lampada_2.desligar();
+
+        System.out.println(lampada_1.verEstado());
+        System.out.println(lampada_2.verEstado());
+    }
+
+    public static void teste_pessoa(){
+    Pessoa p1 = new Pessoa("Alice", 22);
+    Pessoa p2 = new Pessoa("Bruno", 25);
+
+    p2.felizAniversario();
+    p2.felizAniversario();
+    p2.felizAniversario();
+
+    System.out.println("Pessoa 1: Nome " + p1.getNome()+ ", idade: " + p1.getIdade() );
+    System.out.println("Pessoa 2: Nome " + p2.getNome()+ ", idade: " + p2.getIdade() );
+
+    p1.setIdade(-44);
+
+    p2.setNome(" ");
+
+    }
+
+    public static void teste_retangulo(){
+        Retangulo novo = new Retangulo(5,4);
+        System.out.println("Area: " + novo.getArea() + "\n");
+        System.out.println("Perimetro: " + novo.getPerimetro() + "\n");
+
+        for (int i =0; i < 10; i++){
+            float altura = (float) Math.random() * 10 + 1;
+            float largura = (float) Math.random() * 10 + 1;
+            Retangulo retangulo = new Retangulo(altura, largura);
+            System.out.println("Retangulo: " + (i+1) + " - Largura: " + largura + " - Altura: " + altura + " | Área: " + retangulo.getArea() + ", Perimetro: " + retangulo.getPerimetro());
+        }
+
+
+        Retangulo melhor = Retangulo.getMelhorRetangulo();
+        System.out.println("Este é o melhor retangulo:  - Largura: " + melhor.getLargura() + " - Altura: " + melhor.getAltura() + " | Razão: " + melhor.getRazao());
+    }
+
+    public static void teste_produto(){
+        Produto geladeira = new Produto("Geladeira", 832);
+        Produto microondas = new Produto("Microondas", 499);
+
+        System.out.println("Código geladeira: " + geladeira.getCodigo());
+        System.out.println("Código microondas: " + microondas.getCodigo());
+
+        geladeira.setDesconto(6.0);
+        microondas.setDesconto(12.0);
+
+        System.out.printf("Preço geladeira com desconto: R$ %.2f\n",geladeira.precoFinal());
+        System.out.printf("Preço micro-ondas com desconto: R$ %.2f\n",microondas.precoFinal());
+
+        System.out.println(geladeira.anuncio());
+        System.out.println(microondas.anuncio());
+    }
+
+    public static void teste_navio(){
+        Navio navio = new Navio(4, 2, 3, 'H', 'N');
+        System.out.println(navio.mostrarEstado());
+
+        navio.receberAtaque(2,3);
+        navio.receberAtaque(2,5);
+        navio.receberAtaque(2,4);
+        navio.receberAtaque(2,6);
+
+        System.out.println(navio.mostrarEstado());
+
+        if(navio.estaAfundado()){
+            System.out.println("O navio esta afundado");
+        } else {
+            System.out.println("O navio ainda esta flutuando");
+        }
     }
 }
